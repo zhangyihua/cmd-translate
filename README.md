@@ -1,6 +1,6 @@
 # cmd-translate
 
-A simply commond line translation tool
+A simply translation tool on  commond line
 
 # Install
 
