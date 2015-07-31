@@ -1,0 +1,41 @@
+{
+  "name": "cmd-translate",
+  "version": "1.0.0",
+  "description": "a simply commond line translation tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhangyihua/cmd-translate"
+  },
+  "keywords": [
+    "cmd-translate",
+    "translate",
+    "translation",
+    "youdao"
+  ],
+  "author": {
+    "name":"zhangyihua",
+    "email": "shanzimr@163.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhangyihua/cmd-translate/issues"
+  },
+  "homepage": "https://github.com/zhangyihua/cmd-translate",
+  "bin":{
+    "translate":"./bin/translate"
+  },
+  "dependencies": {
+    "colors": "1.1.2",
+    "request": "2.60.0"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "index.js",
+    "LICENSE"
+  ]
+}

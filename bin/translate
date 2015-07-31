@@ -1,0 +1,68 @@
+#!/usr/bin/env node
+
+var request = require('request');
+var colors = require('colors');
+var help = require('../lib/help.js');
+var url = 'http://fanyi.youdao.com/openapi.do?keyfrom=node-translator&key=2058911035&type=data&doctype=json&version=1.1&q=';
+var argv = process.argv;
+var query = argv[2];
+
+var ret = help(query);
+
+if(ret['state']){
+	console.log(ret['info']);
+	return;
+}
+
+url += query;
+
+request(url, function (error, response, body) {
+	if (response.statusCode == 200 && !error) {
+		body = JSON.parse(body);
+		var translation,
+			usPhonetic,
+			explains,
+			web,
+			str,
+			title;
+
+		try{
+			translation = body.translation;
+			usPhonetic = body.basic['us-phonetic'],
+			explains = body.basic.explains,
+			web = body.web;
+		}catch(exc){
+			console.log(('\n\tSorry，字典找不到'+query).bgMagenta.bold);
+			return;
+		}
+
+		title = '\n关键词：'.green;
+		str   = title + query.red + '\n\n';
+		title = '翻译：'.green;
+		str  += title;
+
+		translation.map(function (value) {
+			str += value+'\n\n';
+		});
+
+		explains.map(function (value) {
+			str += '\t'+value+'\n';
+		});
+
+		title = '\n\n'+ '美式发音：'.green;
+		str  += title + usPhonetic;
+		title = '\n\n'+'网络释义：\n'.green;
+		str  += title;
+
+		web.map(function (item) {
+			str += '\t'+item.key+'：';
+			item.value.map(function (value) {
+				str += value+' ';
+			});
+			str += '\n';
+		});
+
+		console.log(str);
+
+	}
+});
