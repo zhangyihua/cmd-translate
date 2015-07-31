@@ -9,4 +9,3 @@ A simply commond line translation tool
 # Usage
 
 `translate [options]`
-
