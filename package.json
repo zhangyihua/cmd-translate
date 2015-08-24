@@ -1,6 +1,6 @@
 {
   "name": "cmd-translate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a simply commond line translation tool",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "youdao"
   ],
   "author": {
-    "name":"zhangyihua",
+    "name": "zhangyihua",
     "email": "shanzimr@163.com"
   },
   "license": "ISC",
@@ -25,8 +25,8 @@
     "url": "https://github.com/zhangyihua/cmd-translate/issues"
   },
   "homepage": "https://github.com/zhangyihua/cmd-translate",
-  "bin":{
-    "t":"./bin/translate"
+  "bin": {
+    "t": "./bin/translate"
   },
   "dependencies": {
     "colors": "1.1.2",
