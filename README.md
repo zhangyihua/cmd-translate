@@ -1,6 +1,6 @@
 # cmd-translate
 
-A simply translation tool on  commond line
+一个简单的CLI英->汉翻译工具
 
 # Install
 
@@ -8,4 +8,4 @@ A simply translation tool on  commond line
 
 # Usage
 
-`translate [options]`
+`t [options]`
